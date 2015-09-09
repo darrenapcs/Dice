@@ -16,13 +16,23 @@ public class Dice extends PApplet {
 
 public void setup()
 {
-	size(500, 500);
+	size(400, 400);
+	background(255);
 	noLoop();
+
 
 }
 public void draw()
 {
-	//your code here
+	 	 for(int x = 10; x < 400; x+= 50)
+ {
+   for(int y = 10; y < 400; y+= 50)
+   {
+   	fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+     rect(x, y, 30, 30);
+   }
+ }
+   
 }
 public void mousePressed()
 {
@@ -30,9 +40,13 @@ public void mousePressed()
 }
 class Die //models one single dice cube
 {
-	//variable declarations here
+	int myX, myY;
+	int numDice;
 	Die(int x, int y) //constructor
 	{
+	  myX = x;
+	  myY = y;
+	  numDice = (int)(Math.random()*6+1);
 	  
 	}
 	public void roll()
@@ -41,7 +55,8 @@ class Die //models one single dice cube
 	}
 	public void show()
 	{
-		//your code here
+
+
 	}
 }
   static public void main(String[] passedArgs) {
